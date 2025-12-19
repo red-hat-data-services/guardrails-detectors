@@ -15,7 +15,7 @@ RUN microdnf update -y                                            && \
             git gcc-toolset-13 make wget unzip rust cargo            \
             gcc-gfortran python3-devel openblas-devel pkgconfig   && \
         pip install --upgrade --no-cache-dir 'cmake<4'               \
-                                        setuptools wheel           ; \
+                                                   wheel           ; \
     fi                                                            && \
     microdnf clean all
 
