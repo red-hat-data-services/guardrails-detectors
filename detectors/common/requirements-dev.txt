@@ -1,6 +1,6 @@
 coverage==7.6.1
 locust==2.31.1
 pre-commit==3.8.0
-pytest==8.3.2
+pytest==9.0.2
 tls-test-tools
 protobuf==6.33.0
