@@ -130,7 +130,7 @@ jobs:
             📦 [Built-in PR image](https://quay.io/trustyai/guardrails-detector-built-in-ci?tab=tags): `quay.io/trustyai/guardrails-detector-built-in-ci:$PR_HEAD_SHA`
             📦 [LLM Judge PR image](https://quay.io/trustyai/guardrails-detector-llm-judge-ci?tab=tags): `quay.io/trustyai/guardrails-detector-llm-judge-ci:$PR_HEAD_SHA`
       - name: Trivy scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           scan-type: 'image'
           image-ref: "${{ env.IMAGE_NAME }}:${{ env.TAG }}"
@@ -141,7 +141,7 @@ jobs:
           ignore-unfixed: false
           vuln-type: 'os,library'
       - name: Trivy scan, built-in image
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           scan-type: 'image'
           image-ref: "${{ env.BUILTIN_IMAGE_NAME }}:${{ env.TAG }}"
@@ -152,7 +152,7 @@ jobs:
           ignore-unfixed: false
           vuln-type: 'os,library'
       - name: Trivy scan, LLM Judge image
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           scan-type: 'image'
           image-ref: "${{ env.LLM_JUDGE_IMAGE_NAME }}:${{ env.TAG }}"
