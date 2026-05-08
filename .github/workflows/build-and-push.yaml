@@ -115,7 +115,7 @@ jobs:
             📦 [PR image](https://quay.io/repository/trustyai/guardrails-detector-huggingface-runtime-ci?tab=tags): `quay.io/trustyai/guardrails-detector-huggingface-runtime-ci:${{ github.event.pull_request.head.sha }}`
             📦 [PR image](https://quay.io/trustyai/guardrails-detector-built-in-ci?tab=tags): `quay.io/trustyai/guardrails-detector-built-in-ci:${{ github.event.pull_request.head.sha }}`
       - name: Trivy scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           scan-type: 'image'
           image-ref: "${{ env.IMAGE_NAME }}:${{ env.TAG }}"
@@ -126,7 +126,7 @@ jobs:
           ignore-unfixed: false
           vuln-type: 'os,library'
       - name: Trivy scan, built-in image
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           scan-type: 'image'
           image-ref: "${{ env.BUILTIN_IMAGE_NAME }}:${{ env.TAG }}"
