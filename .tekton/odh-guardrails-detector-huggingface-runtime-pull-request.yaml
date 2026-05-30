@@ -48,16 +48,32 @@ spec:
       [
       {
         "type": "pip",
-        "path": ".",
-        "requirements_files": ["common/requirements.cuda.txt", "huggingface/requirements.cuda.txt"],
+        "path": "detectors/common/cuda",
+        "requirements_files": ["requirements.txt"],
         "binary":{
           "arch": "x86_64,aarch64"
         }
       },
       {
         "type": "pip",
-        "path": ".",
-        "requirements_files": ["common/requirements.cpu.txt", "huggingface/requirements.cpu.txt"],
+        "path": "detectors/common/cpu",
+        "requirements_files": ["requirements.txt"],
+        "binary":{
+          "arch": "ppc64le,s390x"
+        }
+      },
+      {
+        "type": "pip",
+        "path": "detectors/huggingface/cuda",
+        "requirements_files": ["requirements.txt"],
+        "binary":{
+          "arch": "x86_64,aarch64"
+        }
+      },
+      {
+        "type": "pip",
+        "path": "detectors/huggingface/cpu",
+        "requirements_files": ["requirements.txt"],
         "binary":{
           "arch": "ppc64le,s390x"
         }

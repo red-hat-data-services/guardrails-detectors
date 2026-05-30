@@ -8,18 +8,20 @@ FROM ${CPU_BASE_IMAGE} AS base-s390x
 FROM base-${TARGETARCH} AS builder
 ARG TARGETARCH
 
-COPY ./common/requirements.cuda.txt ./common/requirements.cpu.txt ./
+COPY ./common/cuda/requirements.txt ./common-cuda-requirements.txt
+COPY ./common/cpu/requirements.txt ./common-cpu-requirements.txt
 RUN if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then \
-        pip install --no-cache-dir -r requirements.cpu.txt; \
+        pip install --no-cache-dir -r common-cpu-requirements.txt; \
     else \
-        pip install --no-cache-dir -r requirements.cuda.txt; \
+        pip install --no-cache-dir -r common-cuda-requirements.txt; \
     fi
 
-COPY ./huggingface/requirements.cuda.txt ./huggingface/requirements.cpu.txt ./
+COPY ./huggingface/cuda/requirements.txt ./hf-cuda-requirements.txt
+COPY ./huggingface/cpu/requirements.txt ./hf-cpu-requirements.txt
 RUN if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then \
-        pip install --no-cache-dir -r requirements.cpu.txt; \
+        pip install --no-cache-dir -r hf-cpu-requirements.txt; \
     else \
-        pip install --no-cache-dir -r requirements.cuda.txt; \
+        pip install --no-cache-dir -r hf-cuda-requirements.txt; \
     fi
 
 FROM builder
