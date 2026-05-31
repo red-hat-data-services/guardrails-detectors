@@ -26,6 +26,7 @@ RUN if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then \
     fi
 
 FROM builder
+USER root
 
 WORKDIR /app
 ARG CACHEBUST=1
