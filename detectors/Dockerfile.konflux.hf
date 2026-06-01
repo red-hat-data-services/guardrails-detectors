@@ -1,8 +1,8 @@
 ARG TARGETARCH=amd64
 ARG CUDA_BASE_IMAGE
 ARG CPU_BASE_IMAGE
-FROM ${CUDA_BASE_IMAGE} AS base-amd64
-FROM ${CUDA_BASE_IMAGE} AS base-arm64
+FROM --platform=linux/amd64 ${CUDA_BASE_IMAGE} AS base-amd64
+FROM --platform=linux/arm64 ${CUDA_BASE_IMAGE} AS base-arm64
 FROM ${CPU_BASE_IMAGE} AS base-ppc64le
 FROM ${CPU_BASE_IMAGE} AS base-s390x
 
