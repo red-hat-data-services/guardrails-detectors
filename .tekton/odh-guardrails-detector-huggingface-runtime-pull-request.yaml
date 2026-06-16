@@ -37,15 +37,53 @@ spec:
     value: Dockerfile.konflux.hf
   - name: path-context
     value: detectors
+  - name: build-args-file
+    value: .konflux/base-images.conf
   - name: hermetic
-    value: false
+    value: true
+  - name: prefetch-input
+    value: |
+      [
+      {
+        "type": "pip",
+        "path": "detectors/common/cuda",
+        "requirements_files": ["requirements.txt"],
+        "binary":{
+          "arch": "x86_64,aarch64"
+        }
+      },
+      {
+        "type": "pip",
+        "path": "detectors/common/cpu",
+        "requirements_files": ["requirements.txt"],
+        "binary":{
+          "arch": "ppc64le,s390x"
+        }
+      },
+      {
+        "type": "pip",
+        "path": "detectors/huggingface/cuda",
+        "requirements_files": ["requirements.txt"],
+        "binary":{
+          "arch": "x86_64,aarch64"
+        }
+      },
+      {
+        "type": "pip",
+        "path": "detectors/huggingface/cpu",
+        "requirements_files": ["requirements.txt"],
+        "binary":{
+          "arch": "ppc64le,s390x"
+        }
+      }
+      ]
   - name: build-image-index
     value: true
   - name: build-platforms
     value:
     - linux/x86_64
     - linux/ppc64le
-    - linux-m2xlarge/arm64
+    - linux-d160-m2xlarge/arm64
     - linux/s390x
   - name: image-expires-after
     value: 5d
