@@ -88,8 +88,7 @@ RUN export CURDIR=$(pwd) && \
        source /opt/rh/gcc-toolset-13/enable                                          && \ 
        dnf install -y tar libatomic gcc-toolset-13-libatomic-devel && \
        export OPENSSL_ROOT_DIR=/usr                                                   && \
-       curl -L https://cmake.org/files/v3.31/cmake-3.31.0.tar.gz > /tmp/cmake-3.31.0.tar.gz && \
-       cd /tmp/ && tar -xzf /tmp/cmake-3.31.0.tar.gz -C /tmp &&  cd /tmp/cmake-3.31.0 && ./bootstrap && make && make install && cd .. && rm -rf cmake-3.31.0 && \
+       pip install --no-cache-dir 'cmake<4'                                           && \
        cd $CURDIR; \
     fi                                                                && \
     pip install --no-cache-dir ".[huggingface]"
