@@ -40,7 +40,7 @@ dev = [
     "pytest==8.3.2",
     "pytest-cov>=4.0",
     "tls-test-tools",
-    "protobuf==6.33.0",
+    "protobuf==6.33.6",
     "torch==2.11.0",
 ]
 
