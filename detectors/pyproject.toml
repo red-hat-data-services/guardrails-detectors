@@ -41,7 +41,7 @@ dev = [
     "pytest-cov>=4.0",
     "tls-test-tools",
     "protobuf==6.33.0",
-    "torch==2.11.0",
+    "torch==2.12.1",
 ]
 
 [build-system]
