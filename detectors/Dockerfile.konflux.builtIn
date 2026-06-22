@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi9/python-312@sha256:4a6f6abc00071bc1a9c6c3278
 
 FROM base as builder
 
-COPY ./pyproject.toml .
+COPY . .
 RUN pip install --no-cache-dir ".[built-in]"
 
 FROM builder
