@@ -3,7 +3,8 @@ ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib64:/usr/lib
 ARG TARGETARCH
 USER root
 
-RUN dnf install -y --nodocs python3-devel gcc git openssl-devel tar unzip libatomic && \
+RUN dnf install -y --nodocs python3-devel gcc git openssl-devel tar unzip libatomic \
+    annobin audit-libs llvm-libs && \
     pip install --upgrade --no-cache-dir pip wheel                 && \
     if [ "$TARGETARCH" = "ppc64le" ]; then                            \
         dnf install -y --nodocs                                  \
