@@ -3,16 +3,16 @@ ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib64:/usr/lib
 ARG TARGETARCH
 USER root
 
-RUN dnf install -y --nodocs python3-devel gcc && \
+RUN dnf install -y --nodocs python3-devel gcc git openssl-devel tar unzip libatomic && \
     pip install --upgrade --no-cache-dir pip wheel                 && \
     if [ "$TARGETARCH" = "ppc64le" ]; then                            \
         dnf install -y --nodocs                                  \
-            git gcc-toolset-13 rust cargo wget unzip openssl-devel && \
+            gcc-toolset-13 rust cargo wget && \
         pip install --upgrade --no-cache-dir 'cmake<4'              ; \
     elif [ "$TARGETARCH" = "s390x" ]; then                            \
         dnf install -y --nodocs                                  \
-            git gcc-toolset-13 make wget unzip rust cargo             \
-            gcc-gfortran openblas-devel pkgconfig openssl-devel && \
+            gcc-toolset-13 make wget rust cargo             \
+            gcc-gfortran openblas-devel pkgconfig && \
         pip install --upgrade --no-cache-dir 'cmake<4'                \
                                                    wheel            ; \
     fi                                                             && \
@@ -86,7 +86,7 @@ RUN pip install --no-cache-dir .
 RUN export CURDIR=$(pwd) && \
     if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then \
        source /opt/rh/gcc-toolset-13/enable                                          && \ 
-       dnf install -y tar libatomic gcc-toolset-13-libatomic-devel && \
+       dnf install -y gcc-toolset-13-libatomic-devel && \
        export OPENSSL_ROOT_DIR=/usr                                                   && \
        pip install --no-cache-dir 'cmake<4' setuptools wheel                          && \
        pip install --no-cache-dir --no-build-isolation sentencepiece==0.2.1            && \
