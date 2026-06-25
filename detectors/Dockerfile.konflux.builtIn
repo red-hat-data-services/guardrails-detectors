@@ -1,15 +1,20 @@
-FROM registry.access.redhat.com/ubi9/python-312@sha256:4a6f6abc00071bc1a9c6c327830e0aef994e0f819411de2c0fd99ea2b2fd99ff as base
+FROM quay.io/aipcc/base-images/cpu:3.5.0@sha256:a398ebc954964790a18157c50bf36656f358005786e46273b87f885d78909d5d
+USER root
 
-FROM base as builder
+RUN sed -i.bak 's/include-system-site-packages = false/include-system-site-packages = true/' /opt/app-root/pyvenv.cfg
 
+WORKDIR /opt/app-root/src
 COPY . .
-RUN pip install --no-cache-dir ".[built-in]"
 
-FROM builder
+RUN pip install --no-cache-dir --no-deps --require-hashes \
+        -r requirements-build.txt
+
+RUN pip install --no-cache-dir --no-deps --require-hashes \
+        -r requirements.txt
+
+RUN pip install --no-cache-dir --no-deps .
 
 WORKDIR /app
-ARG CACHEBUST=1
-RUN echo "$CACHEBUST"
 COPY ./common /app/detectors/common
 COPY ./built_in/ /app
 
@@ -20,6 +25,8 @@ RUN mkdir /app/bin &&\
      echo '#!/bin/bash' > /app/bin/regex-detector &&\
     echo "uvicorn app:app --workers 4 --host 0.0.0.0 --port 8080 --log-config /app/detectors/common/log_conf.yaml" >> /app/bin/regex-detector &&\
     chmod +x /app/bin/regex-detector
+
+USER 1001
 CMD ["/app/bin/regex-detector"]
 
 LABEL name="rhoai/odh-built-in-detector-rhel9" \
