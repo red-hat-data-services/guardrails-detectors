@@ -34,7 +34,7 @@ llm-judge = [
     "vllm-judge[jinja2]==0.1.8",
 ]
 dev = [
-    "coverage==7.6.1",
+    "coverage==7.14.3",
     "locust==2.31.1",
     "pre-commit==3.8.0",
     "pytest==8.3.2",
