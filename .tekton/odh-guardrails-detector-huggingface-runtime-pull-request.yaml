@@ -41,6 +41,8 @@ spec:
     value: .konflux/base-images.conf
   - name: hermetic
     value: true
+  - name: ALLOW_CROSS_PLATFORM_IMAGES
+    value: true
   - name: prefetch-input
     value: |
       [
