@@ -158,7 +158,8 @@ uvicorn==0.34.0 \
     --hash=sha256:b3e46c70eaf497271b46b81e17dc4746ff90e92b24794775f34c9122362b17b3
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-xmlschema==4.1.0 \
-    --hash=sha256:e4d2b1e7f48fe2128070115ecc9b01b1bb921f9ca9a04adc94e47910071c160a
+xmlschema==4.3.1 \
+    --hash=sha256:853effdfaf127849d4724368c17bd669e7f1486e15a0376404ad7954ec31a338 \
+    --hash=sha256:9560314d70ae87be0aecb8712cfebed636f867707ccf9758d4b0645d607f64b9
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
