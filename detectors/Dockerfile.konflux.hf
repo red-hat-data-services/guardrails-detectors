@@ -23,10 +23,10 @@ RUN pip install --no-cache-dir --no-deps --require-hashes \
 
 RUN if [ "$PYLOCK_FLAVOR" = "ppc64le" ] || [ "$PYLOCK_FLAVOR" = "s390x" ]; then \
         pip install --no-cache-dir --no-deps --require-hashes \
-            -r requirements.cpu.txt; \
+            -r requirements.hf-cpu.txt; \
     else \
         pip install --no-cache-dir --no-deps --require-hashes \
-            -r requirements.cuda.txt; \
+            -r requirements.hf-cuda.txt; \
     fi
 
 RUN pip install --no-cache-dir --no-deps .
