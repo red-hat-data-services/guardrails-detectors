@@ -10,7 +10,7 @@ RUN pip install --no-cache-dir --no-deps --require-hashes \
         -r requirements-build.txt
 
 RUN pip install --no-cache-dir --no-deps --require-hashes \
-        -r requirements.txt
+        -r requirements.builtIn.txt
 
 RUN pip install --no-cache-dir --no-deps .
 
