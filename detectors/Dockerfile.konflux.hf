@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/python-312@sha256:4a6f6abc00071bc1a9c6c327830e0aef994e0f819411de2c0fd99ea2b2fd99ff as base
+FROM registry.access.redhat.com/ubi9/python-312@sha256:f0a3c86eb6ab0ef1a302f3edcc0e15bf2432492fc8a0903acdedae50c1786d2d as base
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib64:/usr/lib
 ARG TARGETARCH
 USER root
