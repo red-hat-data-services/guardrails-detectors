@@ -213,8 +213,9 @@ torch==2.11.0 \
     --hash=sha256:e2fdbbbd77a87f448677fbfc7ea1c94d987e64b0d16e8850d50b682e836b2aeb
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-tqdm==4.68.3 \
-    --hash=sha256:c38bf26fceea384cfefee552b1e0e947fcee7fdba0905013330f7a2d945c34b2
+tqdm==4.68.4 \
+    --hash=sha256:19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520 \
+    --hash=sha256:5168118b2368f48c561afda8020fd79195b1bdb0bdf8086b88442c267a315dc2
     # via
     #   huggingface-hub
     #   transformers
