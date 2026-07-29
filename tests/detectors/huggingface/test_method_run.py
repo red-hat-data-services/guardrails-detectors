@@ -6,7 +6,7 @@ from unittest.mock import Mock, patch
 
 # relative imports
 from detectors.huggingface.detector import Detector, ContentAnalysisResponse
-from scheme import ContentAnalysisHttpRequest
+from detectors.common.scheme import ContentAnalysisHttpRequest
 
 
 @pytest.fixture
