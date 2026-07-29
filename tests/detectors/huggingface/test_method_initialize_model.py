@@ -3,7 +3,6 @@ import os
 import pytest
 
 # local imports
-from detectors.huggingface.scheme import ContentAnalysisResponse
 from detectors.huggingface.detector import Detector
 
 
