@@ -4,23 +4,23 @@ ARG TARGETARCH
 
 RUN microdnf update -y                                            && \
     microdnf install -y --nodocs                                     \
-        python-pip python-devel                                   && \
-    pip install --upgrade --no-cache-dir pip wheel                && \
+        python3.11 python3.11-pip python3.11-devel                && \
+    pip3.11 install --upgrade --no-cache-dir pip wheel             && \
     if [ "$TARGETARCH" = "ppc64le" ]; then                           \
         microdnf install -y --nodocs                                 \
             git gcc-toolset-13 rust cargo wget unzip              && \
-        pip install --upgrade --no-cache-dir 'cmake<4'             ; \
+        pip3.11 install --upgrade --no-cache-dir 'cmake<4'          ; \
     elif [ "$TARGETARCH" = "s390x" ]; then                           \
         microdnf install -y --nodocs                                 \
             git gcc-toolset-13 make wget unzip rust cargo            \
-            gcc-gfortran python3-devel openblas-devel pkgconfig   && \
-        pip install --upgrade --no-cache-dir 'cmake<4'               \
+            gcc-gfortran python3.11-devel openblas-devel pkgconfig && \
+        pip3.11 install --upgrade --no-cache-dir 'cmake<4'            \
                                         wheel           ; \
     fi                                                            && \
     microdnf clean all
 
 RUN if [ "$TARGETARCH" != "ppc64le" ] && [ "$TARGETARCH" != "s390x" ]; then \
-        pip install --no-cache-dir torch                            ; \
+        pip3.11 install --no-cache-dir torch                        ; \
     fi
 
 # Buildinf torch for ppc64le
@@ -37,11 +37,11 @@ ENV PATH="$HOME/.cargo/bin:$PATH"
 RUN if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then                \
     source /opt/rh/gcc-toolset-13/enable                                              && \
     git clone --recursive https://github.com/pytorch/pytorch.git -b v${TORCH_VERSION} && \
-    cd pytorch && pip install -r requirements.txt                                     && \
-    python setup.py develop                                                           && \
+    cd pytorch && pip3.11 install -r requirements.txt                                 && \
+    python3.11 setup.py develop                                                       && \
     rm -f dist/torch*+git*whl                                                         && \
     MAX_JOBS=${MAX_JOBS:-$(nproc)}                                                       \
-    PYTORCH_BUILD_VERSION=${TORCH_VERSION} PYTORCH_BUILD_NUMBER=1 pip wheel . --wheel-dir /tmp/torchwheels/ ;\
+    PYTORCH_BUILD_VERSION=${TORCH_VERSION} PYTORCH_BUILD_NUMBER=1 pip3.11 wheel . --wheel-dir /tmp/torchwheels/ ;\
 fi
 
 # Building openblas for ppc64le
@@ -70,7 +70,7 @@ ARG TARGETARCH
 # Install PyTorch for ppc64le
 RUN --mount=type=bind,from=torch-builder,source=/tmp/,target=/wheels/,ro \
     if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then \
-        HOME=/root pip install /wheels/torchwheels/*.whl                ;\
+        HOME=/root pip3.11 install /wheels/torchwheels/*.whl            ;\
     fi
 
 # Install OpenBlas for ppc64le
@@ -80,13 +80,13 @@ RUN if [ "$TARGETARCH" = "ppc64le" ]; then                               \
     fi
 
 COPY ./common/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3.11 install --no-cache-dir -r requirements.txt
 
 COPY ./huggingface/requirements.txt .
 RUN if [ "$TARGETARCH" = "ppc64le" ] || [ "$TARGETARCH" = "s390x" ]; then \
        source /opt/rh/gcc-toolset-13/enable                            ; \
     fi                                                                && \
-    pip install --no-cache-dir -r requirements.txt
+    pip3.11 install --no-cache-dir -r requirements.txt
 
 RUN rm -rf /openblas && rm -rf /wheels
 
@@ -100,7 +100,7 @@ COPY ./huggingface/app.py /app
 COPY ./huggingface/detector.py /app
 
 EXPOSE 8000
-CMD ["uvicorn", "app:app", "--workers", "4", "--host", "0.0.0.0", "--port", "8000", "--log-config", "/common/log_conf.yaml"]
+CMD ["python3.11", "-m", "uvicorn", "app:app", "--workers", "4", "--host", "0.0.0.0", "--port", "8000", "--log-config", "/common/log_conf.yaml"]
 
 # gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
 
