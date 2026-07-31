@@ -216,8 +216,6 @@ class Detector:
                     score=prob_of_risk,
                     text=text,
                     evidences=[],
-                    sequence_classification=risk_name,
-                    sequence_probability=prob_of_risk,
                 )
             )
         return content_analyses
@@ -256,12 +254,10 @@ class Detector:
                         ContentAnalysisResponse(
                             start=0,
                             end=len(text),
-                            detection_type="sequence_classification",
-                            score=float(prob),
+                            detection_type=label,
+                            score=prob,
                             text=text,
                             evidences=[],
-                            sequence_classification=label,
-                            sequence_probability=float(prob),
                             **({"detection": detection_value} if detection_value is not None else {})
                         )
                     )

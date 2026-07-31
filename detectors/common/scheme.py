@@ -119,8 +119,7 @@ class ContentAnalysisHttpRequest(BaseModel):
         ],
     )
     detector_params: Optional[Dict] = Field(
-        default=None,
-        description="Optional detector parameters, used on a per-detector basis",
+        description="Optional detector parameters, used on a per-detector basis"
     )
 
 
@@ -136,22 +135,6 @@ class ContentAnalysisResponse(BaseModel):
         default=None,
     )
     metadata: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Additional metadata from evaluation")
-    sequence_classification: Optional[str] = Field(
-        default=None,
-        description="Predicted sequence-level classification label, populated by sequence-classification or causal-LM based detectors",
-    )
-    sequence_probability: Optional[float] = Field(
-        default=None,
-        description="Probability/confidence associated with the sequence_classification label",
-    )
-    token_classifications: Optional[List[Any]] = Field(
-        default=None,
-        description="Optional per-token classification labels, populated by token-classification based detectors",
-    )
-    token_probabilities: Optional[List[float]] = Field(
-        default=None,
-        description="Optional per-token classification probabilities, populated by token-classification based detectors",
-    )
 
 
 class ContentsAnalysisResponse(RootModel):
