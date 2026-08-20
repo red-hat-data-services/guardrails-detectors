@@ -7,8 +7,8 @@ license = "Apache-2.0"
 
 dependencies = [
     "urllib3==2.7.0",
-    "fastapi==0.136.3",
-    "uvicorn==0.34.0",
+    "fastapi==0.141.1",
+    "uvicorn==0.52.4",
     "httpx==0.28.1",
     "prometheus_client>=0.18.0",
     "prometheus-fastapi-instrumentator>=7.0.0",
@@ -17,16 +17,16 @@ dependencies = [
 
 [project.optional-dependencies]
 huggingface = [
-    "transformers==4.57.3",
-    "sentencepiece==0.2.1",
-    "tiktoken==0.12.0",
+    "transformers==4.57.6",
+    "sentencepiece==0.2.2",
+    "tiktoken==0.13.0",
     "torch==2.11.0",
 ]
 built-in = [
-    "markdown==3.8.2",
-    "jsonschema==4.24.0",
-    "xmlschema==4.1.0",
-    "requests==2.32.5",
+    "markdown==3.10.3",
+    "jsonschema==4.26.0",
+    "xmlschema==4.3.2",
+    "requests==2.34.2",
     "regex>=2024.0.0",
 ]
 all = [
@@ -36,13 +36,13 @@ llm-judge = [
     "vllm-judge[jinja2]==0.1.8",
 ]
 dev = [
-    "coverage==7.6.1",
-    "locust==2.31.1",
+    "coverage==7.15.4",
+    "locust==2.46.3",
     "pre-commit==3.8.0",
-    "pytest==8.3.2",
+    "pytest==8.4.2",
     "pytest-cov>=4.0",
     "tls-test-tools",
-    "protobuf==6.33.0",
+    "protobuf==6.33.6",
     "torch==2.11.0",
 ]
 
