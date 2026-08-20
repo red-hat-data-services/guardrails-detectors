@@ -93,8 +93,9 @@ markupsafe==3.0.3 \
     --hash=sha256:e6c6055c4623ff263b359600373e42d2027521c5f7f453b535a5a05ea37b8537
     # via jinja2
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-mpmath==1.3.0 \
-    --hash=sha256:3912d9c5c6877b3a3198b133dfe5b8a7c64c87566f7b16f460c12dc30fa77405
+mpmath==1.4.1 \
+    --hash=sha256:dc4f0ea2304480d4a9a48a94c1020571558ade522b44a6912efac63a586e140f \
+    --hash=sha256:efd6d1b75f09d69524a67609949812668b28e81ecbfe0ab449ced8c13e92642e
     # via sympy
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
 networkx==3.6.1 \
