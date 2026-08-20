@@ -1,8 +1,11 @@
-import re
+import os
+import regex
 from http.client import HTTPException
 from typing import List
 from base_detector_registry import BaseDetectorRegistry
 from detectors.common.scheme import ContentAnalysisResponse
+
+REGEX_TIMEOUT = float(os.environ.get("REGEX_TIMEOUT", "1.0"))
 
 
 def email_address_detector(string: str) -> List[ContentAnalysisResponse]:
@@ -31,7 +34,7 @@ def credit_card_detector(string: str) -> List[ContentAnalysisResponse]:
     )
     # Find all matches and filter with Luhn check
     detections = []
-    for match in re.finditer(pattern, string):
+    for match in regex.finditer(pattern, string, timeout=REGEX_TIMEOUT):
         cc_number = match.group(0).replace(" ", "").replace("-", "")
         print(cc_number)
         if is_luhn_valid(cc_number):
@@ -66,17 +69,17 @@ def is_luhn_valid(card_number):
 
 def ipv4_detector(string: str) -> List[ContentAnalysisResponse]:
     """Detect IPv4 addresses in the text contents"""
-    pattern = re.compile(
+    pattern = regex.compile(
         u"(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)",
-        re.IGNORECASE,
+        regex.IGNORECASE,
     )
     return get_regex_detections(string, pattern, "pii", "ipv4")
 
 def ipv6_detector(string: str) -> List[ContentAnalysisResponse]:
     """Detect IPv6 addresses in the text contents"""
-    pattern = re.compile(
+    pattern = regex.compile(
         u"\s*(?!.*::.*::)(?:(?!:)|:(?=:))(?:[0-9a-f]{0,4}(?:(?<=::)|(?<!::):)){6}(?:[0-9a-f]{0,4}(?:(?<=::)|(?<!::):)[0-9a-f]{0,4}(?:(?<=::)|(?<!:)|(?<=:)(?<!::):)|(?:25[0-4]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-4]|2[0-4]\d|1\d\d|[1-9]?\d)){3})\s*",
-        re.VERBOSE | re.IGNORECASE | re.DOTALL,
+        regex.VERBOSE | regex.IGNORECASE | regex.DOTALL,
     )
     return get_regex_detections(string, pattern, "pii", "ipv6")
 
@@ -100,7 +103,7 @@ def uk_post_code_detector(string: str) -> List[ContentAnalysisResponse]:
 
 def get_regex_detections(string, pattern, detection_type, detection) -> List[ContentAnalysisResponse]:
     detections = []
-    for match in re.finditer(pattern, string):
+    for match in regex.finditer(pattern, string, timeout=REGEX_TIMEOUT):
         detections.append(
             ContentAnalysisResponse(
                 start=match.start(),
