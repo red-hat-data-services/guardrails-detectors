@@ -31,8 +31,9 @@ click==8.4.2 \
     --hash=sha256:f3243ada7f9d368004ab758f8dfa49fa61d4a516ebb0212a81fe571d0bba174b
     # via uvicorn
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
-fastapi==0.136.3 \
-    --hash=sha256:fe2ff8f969f189a96241d3129e052038345fc4d05c86982919f43c534453770e
+fastapi==0.139.2 \
+    --hash=sha256:333145a6891e9b5b3cfceb69baf817e8240cde4d4588ae5a10bf56ffacb6255e \
+    --hash=sha256:b9ad015a835173d59865e2f5d8296fbc2b317bf56a2ba1a5bfbdd03de2fd4b1c
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
 filelock==3.29.4 \
