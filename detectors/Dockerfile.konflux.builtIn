@@ -1,4 +1,4 @@
-ARG CPU_BASE_IMAGE
+ARG CPU_BASE_IMAGE=quay.io/aipcc/base-images/cpu-el9.8:3.6.0-ea.1-1787611401
 FROM ${CPU_BASE_IMAGE}
 USER root
 
