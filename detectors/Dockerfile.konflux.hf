@@ -9,6 +9,7 @@ FROM ${CPU_BASE_IMAGE} AS base-s390x
 FROM base-${TARGETARCH} AS builder
 
 COPY . .
+
 RUN pip install --no-cache-dir ".[huggingface]"
 
 FROM builder
