@@ -189,10 +189,11 @@ sympy==1.14.0 \
     --hash=sha256:be510a858b07054234725e4ff747c798ed8d3e6fd41b94e4141306f267877077
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-tiktoken==0.12.0 \
-    --hash=sha256:7e223cb56118bedb1eee30be314f1556b8d920c9ccc801ff86bd7f8b556a73f4 \
-    --hash=sha256:8395cd99f2601b41be8f346cb297c0d088d725903db7963557e6f49c562b2680 \
-    --hash=sha256:9808ad386de1e9b6586e17fd357e94008678ef041e19e50a710f489566ad187f
+tiktoken==0.13.0 \
+    --hash=sha256:6ed40dd2873138b8bbb81763a29c943e690b4c0f5ccf8d00cf50322cdfb709fe \
+    --hash=sha256:97a5ce1f4f70500e535263a891c02501311959131ef1182b9e419001b35ecce2 \
+    --hash=sha256:db9d5415ac132fd0cc2b6bb48f5f39579a8d04fde4ed15de52fc110ce1a381c7 \
+    --hash=sha256:fdbfae145c2b6e629012e25a0eafb516d9a7b6f5ef3f8d7426d1545175d4bea7
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 tokenizers==0.22.2 \

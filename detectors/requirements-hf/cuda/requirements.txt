@@ -173,9 +173,9 @@ sympy==1.14.0 \
     --hash=sha256:dd85737e26669e923b56a66e25af4d31072d4f307cdae2b3f901f9ffd5c91e2e
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-tiktoken==0.12.0 \
-    --hash=sha256:7ad3bf7d7876a037ab84e9087c8957e6736f36dcb260f1de8a9e5ae9df4aaaab \
-    --hash=sha256:a9161b548c5876eb2a7918e4f4d39c3333a66682e001056982e43fcbe0bcb6d5
+tiktoken==0.13.0 \
+    --hash=sha256:1b51d924a82bec6525dfef98121885d2fa991caefe35b4f54ecc0521803fcbce \
+    --hash=sha256:81c0789538355491f62f10bbefdc1afce65c6f80d7d6204f53d9280b1e1af85d
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 tokenizers==0.22.2 \
