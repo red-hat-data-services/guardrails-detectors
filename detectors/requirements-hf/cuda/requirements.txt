@@ -154,9 +154,9 @@ safetensors==0.8.0 \
     --hash=sha256:ab3dd74abd6ef73819eb916778a1def55d928313b31c3ec8f2546fd073f39dcc
     # via transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-sentencepiece==0.2.1 \
-    --hash=sha256:34fb0971bad0eafe6daa47ded32374c26e4e4f04b43c9f3cb3d500e0bc694d27 \
-    --hash=sha256:c2eea7d52ec5e6e2537c62fbd0aaf67aacaa8c49b30678897318f601c3c95b53
+sentencepiece==0.2.2 \
+    --hash=sha256:60e034fa1e3b7299be5ee0eb4da1ece4402caff788b35a4f14b4d39606918de6 \
+    --hash=sha256:de38424b5b45f678f6097efa5987bb116cd101baeb91614d25dfdcecf115f06c
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 setuptools==81.0.0 \
