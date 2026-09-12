@@ -1,4 +1,4 @@
-RHOAI_VERSION=3.5
+RHOAI_VERSION=3.6-EA2
 CUDA_VERSION=13.0
 UBI_VERSION=9
 
@@ -15,18 +15,23 @@ endef
 RHAI_CPU_INDEX_URL=$(call resolve_index_url,$(RHAI_CPU_PROD_URL),$(RHAI_CPU_TEST_URL))
 RHAI_CUDA_INDEX_URL=$(call resolve_index_url,$(RHAI_CUDA_PROD_URL),$(RHAI_CUDA_TEST_URL))
 
-UV_COMPILE_FLAGS=--python-version 3.12 --python-platform linux \
-	--no-emit-package guardrails-detectors \
+UV_COMMON_FLAGS=--python-version 3.12 \
 	--index-strategy first-index --emit-index-url --emit-index-annotation \
 	--generate-hashes --prerelease=if-necessary --no-strip-markers
 
-.PHONY: hf-cpu-requirements hf-cuda-requirements all-requirements check-indexes
+UV_COMPILE_FLAGS=$(UV_COMMON_FLAGS) --python-platform linux \
+	--no-emit-package guardrails-detectors
+
+.PHONY: hf-cpu-requirements hf-cuda-requirements build-requirements all-requirements check-indexes
 
 hf-cpu-requirements:
 	uv pip compile pyproject.toml --extra huggingface \
 		$(UV_COMPILE_FLAGS) \
 		--default-index $(RHAI_CPU_INDEX_URL) \
-		-o requirements-hf/cpu/requirements.txt
+		-o requirements-hf/cpu/requirements-full.txt
+	python3 scripts/extract_native_requirements.py \
+		requirements-hf/cpu/requirements-full.txt \
+		requirements-hf/cpu/requirements.txt
 
 hf-cuda-requirements:
 	uv pip compile pyproject.toml --extra huggingface \
@@ -40,7 +45,13 @@ built-in-requirements:
 		--default-index $(RHAI_CPU_INDEX_URL) \
 		-o requirements.builtIn.txt
 
-all-requirements: hf-cpu-requirements hf-cuda-requirements built-in-requirements
+build-requirements:
+	echo "setuptools>=80.9.0" | uv pip compile - \
+		$(UV_COMMON_FLAGS) --python-platform x86_64-manylinux_2_34 \
+		--default-index $(RHAI_CPU_INDEX_URL) \
+		-o requirements-build.txt
+
+all-requirements: hf-cpu-requirements hf-cuda-requirements built-in-requirements build-requirements
 
 check-indexes:
 	@echo "CPU index: $(RHAI_CPU_INDEX_URL)"
