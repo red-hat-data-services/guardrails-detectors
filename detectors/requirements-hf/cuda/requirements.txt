@@ -42,8 +42,9 @@ filelock==3.32.4 \
     #   torch
     #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-fsspec==2026.6.0 \
-    --hash=sha256:0659d8505587e96ab810cda7ff6c9ddef0c6756ef580fc3ff0aee17b4d1da315
+fsspec==2026.7.0 \
+    --hash=sha256:b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279 \
+    --hash=sha256:c803c40f4cf860b49dea58ee3e1c33cb9c790520e233537e1340049f89b82a88
     # via
     #   huggingface-hub
     #   torch

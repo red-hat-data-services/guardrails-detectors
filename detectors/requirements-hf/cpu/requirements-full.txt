@@ -42,8 +42,9 @@ filelock==3.32.4 \
     #   torch
     #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-fsspec==2026.6.0 \
-    --hash=sha256:f33ec84d31c950d62d94fefc459713ecffa6fb3253ae637f564166da1dbc5bfc
+fsspec==2026.7.0 \
+    --hash=sha256:b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279 \
+    --hash=sha256:c803c40f4cf860b49dea58ee3e1c33cb9c790520e233537e1340049f89b82a88
     # via
     #   huggingface-hub
     #   torch
