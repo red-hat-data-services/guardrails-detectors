@@ -108,8 +108,9 @@ numpy==2.5.2 \
     --hash=sha256:afaa711680b33da727d91bcfd75b131fee66f392bea5acd140df9e7907ed02b6
     # via transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-packaging==26.2 \
-    --hash=sha256:b7d1f7f817670fcdc447e4b4256004f17aed1b863d3749a54284f906c2676670
+packaging==26.3 \
+    --hash=sha256:94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79 \
+    --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
     # via
     #   huggingface-hub
     #   transformers
