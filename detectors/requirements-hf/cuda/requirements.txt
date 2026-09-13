@@ -196,8 +196,9 @@ tqdm==4.70.0 \
     #   huggingface-hub
     #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-transformers==4.57.3 \
-    --hash=sha256:7b4751bee78c9f9d3d0a7e95117db0388acefdc0831dcb5a84f26a8fc27cf455
+transformers==5.17.0 \
+    --hash=sha256:78ec1ce21579b38dfb83950a0658cd119f87212a2fcfdff478096ce9d6c03801 \
+    --hash=sha256:a153be279169b55b92d8000bf4af294aed684503d091cca7804da2dd8a9de000
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 triton==3.6.0 \
