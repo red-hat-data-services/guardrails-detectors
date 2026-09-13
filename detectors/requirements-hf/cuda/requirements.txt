@@ -163,8 +163,9 @@ setuptools==81.0.0 \
     --hash=sha256:b0dd178a0e7ef748a46b3b8d2b6412999c654f7dbff02cd4ce5112ad54a28ee4
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-starlette==1.3.1 \
-    --hash=sha256:68535a7f1a665a761a9b113a371431e66c6c6656ded95b3be60861e9e4ee940b
+starlette==1.6.0 \
+    --hash=sha256:a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c \
+    --hash=sha256:d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b
     # via
     #   fastapi
     #   prometheus-fastapi-instrumentator
