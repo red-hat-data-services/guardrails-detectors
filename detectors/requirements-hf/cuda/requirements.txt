@@ -73,8 +73,9 @@ huggingface-hub==0.36.2 \
     #   tokenizers
     #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-idna==3.18 \
-    --hash=sha256:d1f0384a9a97ff2a8c2f8a8327f2a19f770afa9890d39f24e35ad70e8b6a3bf2
+idna==3.19 \
+    --hash=sha256:5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15 \
+    --hash=sha256:815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4
     # via
     #   anyio
     #   httpx
