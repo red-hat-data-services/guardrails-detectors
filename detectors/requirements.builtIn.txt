@@ -78,8 +78,9 @@ markdown==3.8.2 \
     --hash=sha256:1fe3d41f31754c4abcee66739a4f44e7ac465743764d262a13969d957c77e213
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-prometheus-client==0.25.0 \
-    --hash=sha256:34577aeee817238adf900bebb60c63697fa70d15d8f9e1c6984729cce45fb10f
+prometheus-client==0.26.0 \
+    --hash=sha256:04a91bcf94e2cf74a44a1a874d651a2e853ed354b6e822f3b7487751465d5c2b \
+    --hash=sha256:fa93d06737aa02bacd05794768508bb97d2fbee28cb3bca04eaae92f0ca953d6
     # via
     #   guardrails-detectors (pyproject.toml)
     #   prometheus-fastapi-instrumentator
