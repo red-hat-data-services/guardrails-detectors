@@ -159,8 +159,9 @@ sentencepiece==0.2.2 \
     --hash=sha256:de38424b5b45f678f6097efa5987bb116cd101baeb91614d25dfdcecf115f06c
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-setuptools==81.0.0 \
-    --hash=sha256:b0dd178a0e7ef748a46b3b8d2b6412999c654f7dbff02cd4ce5112ad54a28ee4
+setuptools==84.0.0 \
+    --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670 \
+    --hash=sha256:f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 starlette==1.3.1 \

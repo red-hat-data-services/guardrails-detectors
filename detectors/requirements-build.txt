@@ -2,6 +2,7 @@
 #    uv pip compile - --python-version 3.12 --index-strategy first-index --emit-index-url --emit-index-annotation --generate-hashes --prerelease=if-necessary --no-strip-markers --python-platform x86_64-manylinux_2_34 --default-index https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/ -o requirements-build.txt
 --index-url https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 
-setuptools==82.0.1 \
-    --hash=sha256:584a1e33c6ea47f93af5cd7bdb7ba9ea9f502b53961d70c222088d409b4d49e2
+setuptools==84.0.0 \
+    --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670 \
+    --hash=sha256:f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/

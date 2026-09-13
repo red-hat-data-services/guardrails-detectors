@@ -175,8 +175,9 @@ sentencepiece==0.2.2 \
     --hash=sha256:debf274c4eafeeca949e92fca76f67313a0269491fc236d7b8111579f21b36d5
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-setuptools==81.0.0 \
-    --hash=sha256:79341b8425206b80f1be7fa72d9cbeccab2c1be2cfb44a886f05543dc5427559
+setuptools==84.0.0 \
+    --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670 \
+    --hash=sha256:f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 starlette==1.3.1 \
