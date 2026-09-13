@@ -233,8 +233,9 @@ triton==3.6.0 ; platform_machine != 's390x' \
     --hash=sha256:e9131e05ac5186c50b3075f7ee17e1b698d334936f07606ed72cfacefbf47ece
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-typing-extensions==4.15.0 \
-    --hash=sha256:a011434b1fd08a547cfaec4b7bc41177b583a5196d2d91c8f63d15ad0595c3a9
+typing-extensions==4.16.0 \
+    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8 \
+    --hash=sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5
     # via
     #   anyio
     #   fastapi
