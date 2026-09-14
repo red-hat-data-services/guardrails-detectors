@@ -10,8 +10,9 @@ annotated-types==0.8.0 \
     --hash=sha256:e0c57ea5782c1c5685ea32e807904afba49f37bdb8b118233c6d4c8cbf948c23
     # via pydantic
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-anyio==4.14.2 \
-    --hash=sha256:cec86dc134fe29afee2135e4bdc1c647f35d9b9f749734491eacb5e9c65ab9e0
+anyio==4.15.1 \
+    --hash=sha256:6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101 \
+    --hash=sha256:9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94
     # via
     #   httpx
     #   starlette
