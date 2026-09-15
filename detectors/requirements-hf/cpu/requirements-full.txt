@@ -220,8 +220,9 @@ tqdm==4.70.0 \
     #   huggingface-hub
     #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-transformers==4.57.3 \
-    --hash=sha256:d71b852510df6fe5e9ebae67763102c51085d8702fe12902826ccf302bb2c2b2
+transformers==5.17.0 \
+    --hash=sha256:78ec1ce21579b38dfb83950a0658cd119f87212a2fcfdff478096ce9d6c03801 \
+    --hash=sha256:a153be279169b55b92d8000bf4af294aed684503d091cca7804da2dd8a9de000
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 triton==3.6.0 ; platform_machine != 's390x' \
