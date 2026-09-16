@@ -33,8 +33,9 @@ charset-normalizer==3.4.7 \
     --hash=sha256:29d94e888271160a8b8c2a465d62777b7f0c2a5c056a57b1c47dc60765eea275
     # via requests
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-click==8.4.1 \
-    --hash=sha256:b6631fcc106907263ae7f6376f80d967fd75c1902c3d2bb2ca1cead22e589b39
+click==8.4.2 \
+    --hash=sha256:9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6 \
+    --hash=sha256:e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76
     # via uvicorn
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
 elementpath==5.1.2 \
