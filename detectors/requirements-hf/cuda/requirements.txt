@@ -89,8 +89,9 @@ markupsafe==3.0.3 \
     --hash=sha256:b7531d17b93c1b5c6e47ee7f795ad7d234efcb6ee8ddf1a4228e0cdef8cde031
     # via jinja2
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
-mpmath==1.3.0 \
-    --hash=sha256:b3f417fe609127e373a72c8ad7c7e7a9b55762934bd280b2dab28e95e7fef85a
+mpmath==1.4.1 \
+    --hash=sha256:dc4f0ea2304480d4a9a48a94c1020571558ade522b44a6912efac63a586e140f \
+    --hash=sha256:efd6d1b75f09d69524a67609949812668b28e81ecbfe0ab449ced8c13e92642e
     # via sympy
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
 networkx==3.6.1 \
