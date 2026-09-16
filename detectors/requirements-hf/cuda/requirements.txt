@@ -4,7 +4,9 @@
 
 annotated-doc==0.0.5 \
     --hash=sha256:336a05629fd9a4770365bd136c4cf52a9bd6e99762f0eb0edcd2bda6a36ac274
-    # via fastapi
+    # via
+    #   fastapi
+    #   typer
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 annotated-types==0.8.0 \
     --hash=sha256:e0c57ea5782c1c5685ea32e807904afba49f37bdb8b118233c6d4c8cbf948c23
@@ -29,10 +31,12 @@ charset-normalizer==3.5.1 \
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 click==8.4.2 \
     --hash=sha256:4e90c67eff90cf0ae6dfea593cba6e9b8e8a64ddbbc983a3cd4ba0b4ae442914
-    # via uvicorn
+    # via
+    #   huggingface-hub
+    #   uvicorn
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-fastapi==0.136.3 \
-    --hash=sha256:2152edadd6fceaaace15643140bcdd1e6100c0dcd1de007d08c7e374cc5c06c6
+fastapi==0.141.1 \
+    --hash=sha256:d6b53c36512e3ce45cacf23422db80c49a716ed64d0eebdc22b23494935681db
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 filelock==3.32.4 \
@@ -40,7 +44,6 @@ filelock==3.32.4 \
     # via
     #   huggingface-hub
     #   torch
-    #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 fsspec==2026.6.0 \
     --hash=sha256:0659d8505587e96ab810cda7ff6c9ddef0c6756ef580fc3ff0aee17b4d1da315
@@ -54,7 +57,7 @@ h11==0.16.0 \
     #   httpcore
     #   uvicorn
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-hf-xet==1.6.0 ; platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64' \
+hf-xet==1.6.0 ; platform_machine == 'AMD64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64' \
     --hash=sha256:0a9b1ddf1ac00d4484fc1d08c11746708ca87d210ba8ac3a2657790a2af2c3af \
     --hash=sha256:1ab07e3f1be58828e6792feb7da65b276b66986ccd32d2a523f178a727e9a91e
     # via huggingface-hub
@@ -65,10 +68,12 @@ httpcore==1.0.9 \
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 httpx==0.28.1 \
     --hash=sha256:751903c7c4617d974f82c5935bee6b8214b11af0d9a451f20122e09dfde1572c
-    # via guardrails-detectors (pyproject.toml)
+    # via
+    #   guardrails-detectors (pyproject.toml)
+    #   huggingface-hub
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-huggingface-hub==0.36.2 \
-    --hash=sha256:dfeef6cd216ce1dff998dde4b9ba2fef5adc0233799ab26d02b60d963917616b
+huggingface-hub==1.31.0 \
+    --hash=sha256:c04704c8bf88c924ac1ff2f1ddd15c55d12039ab5d1515172cb2072a95d319dd
     # via
     #   tokenizers
     #   transformers
@@ -84,10 +89,18 @@ jinja2==3.1.6 \
     --hash=sha256:598efca823921a564b9226ffff6a05fcbbfc3a7a52d22947755c04cb372419d6
     # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
+markdown-it-py==4.2.0 \
+    --hash=sha256:2e3e39b7489598e696070e4eca97ccbb4c205bea53b525ec04c169b03182b2eb
+    # via rich
+    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 markupsafe==3.0.3 \
     --hash=sha256:08ba9e3e1a4c787e05ccd2e503a2b589413890cc6fe33e4252ee4d7e4c24b717 \
     --hash=sha256:a65948fd375ba3b542036244f8be67522ffbb131bbb26f77ddde317319f505e3
     # via jinja2
+    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
+mdurl==0.1.2 \
+    --hash=sha256:9a1222d5fee97d12fd3e1b9da56de6b53548b9b0d1ff9f92d56e9915bd4b9297
+    # via markdown-it-py
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 mpmath==1.3.0 \
     --hash=sha256:0640c516c8164e1eec9da3e51b308efa47317e74a481a4f9562d9ace2552300b
@@ -127,6 +140,10 @@ pydantic-core==2.46.4 \
     --hash=sha256:5ec9ae5a997352cf205fe686273948afb52ab958859f1a404884436f5ac8dec0
     # via pydantic
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
+pygments==2.21.0 \
+    --hash=sha256:7ce53c8476ed7bf54d207d6ad4a422cc7da20947f967645b8d76d72948e466e9
+    # via rich
+    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 pyyaml==6.0.3 \
     --hash=sha256:191657af4b113f7653d7ba310f713014c04f076411e349b986298c53be96d59c \
     --hash=sha256:f85f529d4fab78d7d1271b2e74116f3a2acf728f9ad4c63dab1eb04df893e181
@@ -144,10 +161,11 @@ regex==2026.7.19 \
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 requests==2.34.2 \
     --hash=sha256:349a37be55c2f555fb3fe0b8b8dc7e24909f3b656473dd98c2a48c0de3cdc6a1
-    # via
-    #   huggingface-hub
-    #   tiktoken
-    #   transformers
+    # via tiktoken
+    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
+rich==15.0.0 \
+    --hash=sha256:c0363f4b75dc44fa0b96fa19debed8a30a34eb2bc42ec7c3b2f23db518d84fc5
+    # via typer
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 safetensors==0.8.0 \
     --hash=sha256:3d0715a5b683c2fa3940d621ed2dc1414a76e74a8b42499fecbde96aeaabbadd \
@@ -162,6 +180,10 @@ sentencepiece==0.2.2 \
 setuptools==81.0.0 \
     --hash=sha256:b0dd178a0e7ef748a46b3b8d2b6412999c654f7dbff02cd4ce5112ad54a28ee4
     # via torch
+    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
+shellingham==1.5.4 \
+    --hash=sha256:233bc87e3ab14c037a7f6473a92358bf1625a5548a360df945116702f532e84b
+    # via typer
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 starlette==1.3.1 \
     --hash=sha256:68535a7f1a665a761a9b113a371431e66c6c6656ded95b3be60861e9e4ee940b
@@ -178,16 +200,14 @@ tiktoken==0.13.0 \
     --hash=sha256:81c0789538355491f62f10bbefdc1afce65c6f80d7d6204f53d9280b1e1af85d
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-tokenizers==0.22.2 \
-    --hash=sha256:81d111bcfaf0a1a54105db154b5a34d1cc44146b8028c25f2dbb20d362885a09 \
-    --hash=sha256:cd3497be602f054161922de621b2fa42e3e7748f51df1d19781b986cec760743
+tokenizers==0.23.2 \
+    --hash=sha256:6612c34995005a480ec9598c140402a771f7e7ac478ac6c458e0224d61ea14e6 \
+    --hash=sha256:c73837f2052f40191b58bbead911e2e1c28b5326a10784d0ac3b0a06d00eee5e
     # via transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-torch==2.11.0 \
-    --hash=sha256:29f821a0aa619d15f15090daf141e6332847adf2c5bb34a6b5847449a4ee1cfa \
-    --hash=sha256:5462952e48df29f88c4ee238ac01cc36ac34e86f8c4fd2bfcca44ca1749420f2 \
-    --hash=sha256:c3a1a1c924743f7e711d5e3376c9a7c6d10adbadd2b28cac4b360d692c020d4b \
-    --hash=sha256:f77f0e56f2a8f6334843ec395ba9ee857043dda241f1e5e1ac74d851a8f1179b
+torch==2.13.0 \
+    --hash=sha256:36b2cbbe086c1c65fda0c568d7f929a29c513fe44302f30cdf3756a92c0480b7 \
+    --hash=sha256:4506b290da6bff31c80778bf6e3fb36ec152f9e603e35bd109ad1ad60dbc404e
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 tqdm==4.70.0 \
@@ -196,16 +216,20 @@ tqdm==4.70.0 \
     #   huggingface-hub
     #   transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-transformers==4.57.3 \
-    --hash=sha256:7b4751bee78c9f9d3d0a7e95117db0388acefdc0831dcb5a84f26a8fc27cf455
+transformers==5.17.0 \
+    --hash=sha256:b0591b9fb061d5ab2b467db0b9961ab30f66e86830a3e2e1c4db82b631667ccc
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
-triton==3.6.0 \
-    --hash=sha256:455800fee571b329fbc98c34e8019b617ca823b6f29a771ae4dbdc848a2115ae \
-    --hash=sha256:74f2cfa9f3de14cf8758d7a8675074b9bc06826a7ab5da40f8c90c562f924828 \
-    --hash=sha256:b139cb99c49efdb25efe6985e40760c9a5146ac9a839229b28245392b7ce2504 \
-    --hash=sha256:f5a8b414b4a9717fe512891befc5f89a4d2d1d176d695f268a1521718cd7271b
+triton==3.7.1 \
+    --hash=sha256:08cc3cded21855858556ba0e3e9afc22ef92168f8d8873b9cfdbdf6176cf91fd \
+    --hash=sha256:1b910114bc3e1b937805a8ba9d6afa6bcee91e08c4ec3c5c5654e6534f350d0f \
+    --hash=sha256:5286a2343dfc92317bf2c16e2463cb2626a24af44555a27e2955278340fb1a23 \
+    --hash=sha256:d73bec8df1ba00a873b294f8b646b72bb367358958c497a1c904ab349ff34ff4
     # via torch
+    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
+typer==0.27.2 \
+    --hash=sha256:51893c188c4ece1639781938011706c315ece23168ff12b2d4777dded16a3ea5
+    # via transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cuda13.0-ubi9-test/simple/
 typing-extensions==4.15.0 \
     --hash=sha256:20b256fae35f9d032ffbfaf333bac31623617fe2c5676b727b3d6a4f787340ec
