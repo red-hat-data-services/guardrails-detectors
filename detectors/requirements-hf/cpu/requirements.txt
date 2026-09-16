@@ -7,7 +7,7 @@
 #    uv pip compile pyproject.toml --extra huggingface --python-version 3.12 --index-strategy first-index --emit-index-url --emit-index-annotation --generate-hashes --prerelease=if-necessary --no-strip-markers --python-platform linux --no-emit-package guardrails-detectors --default-index https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/ -o requirements-hf/cpu/requirements-full.txt
 --index-url https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 
-hf-xet==1.6.0 ; platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64' \
+hf-xet==1.6.0 ; platform_machine == 'AMD64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64' \
     --hash=sha256:0e632a986cc3f4eb3ee7ad9279208ed55dd47eca88f2c460e236bbf394b23824 \
     --hash=sha256:5bf394154b3885c1306b8736cfe138c6d33fe3f7374925a4ec251ea3a4ffa123 \
     --hash=sha256:5ee4c70ebf45024976ccc6fe1980f62ff36d41fb9454be316dae7e4d8cf9e910 \
@@ -75,30 +75,17 @@ tiktoken==0.13.0 \
     --hash=sha256:fdbfae145c2b6e629012e25a0eafb516d9a7b6f5ef3f8d7426d1545175d4bea7
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-tokenizers==0.22.2 \
-    --hash=sha256:69c81fae0de1a3ad838698c5d437b497ba6877d807c4cf6899aa6903f49adcc0 \
-    --hash=sha256:7009080aca0c366f7d9a2f6314e89e338588512ecbd8d7342cb4993da9d96548 \
-    --hash=sha256:8dbf10df6e435614d66bb8640e3f77f12daf140ea3c9a5dea204650d1ea28e8a \
-    --hash=sha256:956557ecd34184cafe730b637a6bac29433b887e75ef08803c396be6d5ebe7ab
+tokenizers==0.23.2 \
+    --hash=sha256:084fb6fe4b00e498df84171e821fbf93331ded6623d119e5f762cd4eb412f443 \
+    --hash=sha256:23e96a50a7a40a42b5a6a8514b87cc662327c555151b1851ae32e6cdf534572b \
+    --hash=sha256:49995ba234c17989952f8188c0a4c900ce86972007e5a7971364db987697549f \
+    --hash=sha256:af755f4d27c64a60c6f4130ec8f4dc99fce2c0379a5ededa05659831c5fdf5a1
     # via transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-torch==2.11.0 \
-    --hash=sha256:2722128ac000fea6a190208bea2e7835a6c574c81159ed10c835a436542ac434 \
-    --hash=sha256:378d861cd0c459ec00307398ebaae166e8f47a7fdcac66bac1c9b13b7febaddf \
-    --hash=sha256:41a57777b3f408648a1ec08afc057094c286a0239ff342ca6273d20dd90d6e5f \
-    --hash=sha256:4855365a7ee5941ea411f7a566c4bdf8da00d3f81397e9a188b3924ff0628a0f \
-    --hash=sha256:6dc0a06d35e667cc69e9400e1af9c4163f7d4a6788e243503a577fbf1532e1d7 \
-    --hash=sha256:8bf9a0229437ac32ed26e6182625881b4b0565441a83211bd43b490a3de94dd3 \
-    --hash=sha256:dfca93204eed6834d6b98044cc6696e1b315c8b5bfc10c25974f616e2f5b3543 \
-    --hash=sha256:ec239a70ca4f079146b44fe59a80ffe6f8b13d4b9f81a75b293e8d2ae3f73f5f
+torch==2.13.0 \
+    --hash=sha256:2a04ad8ab85fbeeac8463915f8e070949a9f98bd7630601af8b6955ee1fe0f4d \
+    --hash=sha256:8a6ea722d77aecdcb3af8daf3d505419160281c81524fd0599dac13bdfa9a0d1 \
+    --hash=sha256:97ce14be01501f66257b84875af54124a510869d742163c2cb66e7fdc3bd2bd5 \
+    --hash=sha256:cfc35cf3b57b501b890a838bcdc7b7324195e047e92488f1faf9a8c8cbd402a7
     # via guardrails-detectors (pyproject.toml)
-    # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-triton==3.6.0 ; platform_machine != 's390x' \
-    --hash=sha256:10a4312290e8aa8ebd51fb7d609cdff7b5de87ea533554adbafc8209350b45f8 \
-    --hash=sha256:2cfbdb91cdb02bfc9c2f9e512bc4d56e0d228323ca5690bc8320077a291acec2 \
-    --hash=sha256:3bb6255461bc028df69d457907a2b00b49b12427788f63107badad314f288735 \
-    --hash=sha256:4faa64744bb3259b03481b1898f3094adb9e06d9a995401602fbe54d3c51b41c \
-    --hash=sha256:78526dd2b6ac29a2027e48440308988a97b95c4954220f6e4306b59312221330 \
-    --hash=sha256:e9131e05ac5186c50b3075f7ee17e1b698d334936f07606ed72cfacefbf47ece
-    # via torch
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
