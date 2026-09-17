@@ -132,8 +132,9 @@ rpds-py==2026.6.3 \
     #   jsonschema
     #   referencing
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-starlette==1.3.1 \
-    --hash=sha256:792e00a4508f31d4ba8f7fb272f6c8bc039f3761638fb5aa471b1108cb73225e
+starlette==1.6.0 \
+    --hash=sha256:a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c \
+    --hash=sha256:d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b
     # via
     #   fastapi
     #   prometheus-fastapi-instrumentator
