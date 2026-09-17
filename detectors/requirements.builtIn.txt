@@ -10,8 +10,9 @@ annotated-types==0.8.0 \
     --hash=sha256:0a1148cf189c24d548fc1ecaa7a889db3fd0ac49c24a672f9c03ed34ac8a75a9
     # via pydantic
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-anyio==4.14.2 \
-    --hash=sha256:982d481dc430ecf619d63c5dd77b534442795acdd713344c5f405a69c20aadaa
+anyio==4.15.1 \
+    --hash=sha256:6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101 \
+    --hash=sha256:9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94
     # via
     #   httpx
     #   starlette
