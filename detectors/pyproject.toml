@@ -23,7 +23,7 @@ huggingface = [
     "torch==2.11.0",
 ]
 built-in = [
-    "markdown==3.8.2",
+    "markdown==3.10.3",
     "jsonschema==4.24.0",
     "xmlschema==4.1.0",
     "requests==2.32.5",
