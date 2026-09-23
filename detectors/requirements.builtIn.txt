@@ -161,8 +161,9 @@ urllib3==2.7.0 \
     #   guardrails-detectors (pyproject.toml)
     #   requests
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-uvicorn==0.34.0 \
-    --hash=sha256:a8d2f1e19fd2722a85d73acf5c4e3696b7d884cd7416a803369ee3e04a202307
+uvicorn==0.52.4 \
+    --hash=sha256:73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86 \
+    --hash=sha256:f86e41a149d7d05a9969337e3946a9c171c06a5d42680896daaba624aeac8da1
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 xmlschema==4.1.0 \
