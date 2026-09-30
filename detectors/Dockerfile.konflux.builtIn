@@ -1,7 +1,8 @@
 FROM registry.access.redhat.com/ubi9/python-312:latest@sha256:e6a10c3150624fbfd33dbd7721ef99ce7a1001b417d64427ad58515ab8044121 as base
 USER root
+# pip>=26.1.2 fixes CVE-2026-8643 (path traversal via entry point names)
 RUN dnf install -y --nodocs python3-devel && \
-    pip install --upgrade --no-cache-dir pip wheel && \
+    pip install --upgrade --no-cache-dir 'pip>=26.1.2' wheel && \
     dnf clean all
 
 # FROM icr.io/fm-stack/ubi9-minimal-py39-torch as builder
