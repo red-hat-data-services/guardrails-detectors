@@ -11,6 +11,12 @@ FROM base-${TARGETARCH} AS builder
 COPY . .
 RUN pip install --no-cache-dir ".[huggingface]"
 
+# uv is build tooling inherited from the base image, not a runtime dependency.
+# Remove its bundled crypto and the uvx companion (RHOAIENG-97373).
+RUN /opt/app-root/bin/python -m pip uninstall -y uv && \
+    test ! -e /opt/app-root/bin/uv && \
+    test ! -e /opt/app-root/bin/uvx
+
 FROM builder
 USER root
 
