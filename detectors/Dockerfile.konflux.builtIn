@@ -26,6 +26,11 @@ RUN mkdir /app/bin &&\
     echo "uvicorn app:app --workers 4 --host 0.0.0.0 --port 8080 --log-config /app/detectors/common/log_conf.yaml" >> /app/bin/regex-detector &&\
     chmod +x /app/bin/regex-detector
 
+# Remove build-time Rust tools flagged by the runtime FIPS scan.
+RUN python -m pip uninstall -y uv && \
+    rm -f /opt/app-root/bin/uv /opt/app-root/bin/uvx && \
+    ! command -v uv && ! command -v uvx
+
 USER 1001
 CMD ["/app/bin/regex-detector"]
 
