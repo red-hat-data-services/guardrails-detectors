@@ -1,4 +1,5 @@
 FROM registry.access.redhat.com/ubi9/python-312:latest@sha256:e6a10c3150624fbfd33dbd7721ef99ce7a1001b417d64427ad58515ab8044121 as base
+USER root
 RUN dnf update -y && \
     dnf install -y --nodocs \
         python-pip python-devel && \
@@ -22,6 +23,7 @@ RUN echo "$CACHEBUST"
 COPY ./common /app/detectors/common
 COPY ./built_in/ /app
 
+USER 1001
 EXPOSE 8080
 
 # for backwards compatibility with existing k8s deployment configs
