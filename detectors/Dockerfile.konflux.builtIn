@@ -1,9 +1,9 @@
-FROM registry.access.redhat.com/ubi9/ubi-minimal as base
-RUN microdnf update -y && \
-    microdnf install -y --nodocs \
+FROM registry.access.redhat.com/ubi9/python-312:latest@sha256:e6a10c3150624fbfd33dbd7721ef99ce7a1001b417d64427ad58515ab8044121 as base
+RUN dnf update -y && \
+    dnf install -y --nodocs \
         python-pip python-devel && \
     pip install --upgrade --no-cache-dir pip wheel && \
-    microdnf clean all
+    dnf clean all
 
 # FROM icr.io/fm-stack/ubi9-minimal-py39-torch as builder
 FROM base as builder
