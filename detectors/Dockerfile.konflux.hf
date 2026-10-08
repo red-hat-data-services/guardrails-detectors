@@ -4,7 +4,7 @@ ARG TARGETARCH
 USER root
 
 RUN dnf install -y --nodocs python3-devel gcc && \
-    pip install --upgrade --no-cache-dir pip wheel                 && \
+    pip install --upgrade --no-cache-dir 'pip>=26.1.2' wheel                 && \
     if [ "$TARGETARCH" = "ppc64le" ]; then                            \
         dnf install -y --nodocs                                       \
             git gcc-toolset-13 rust cargo wget unzip openssl-devel && \
