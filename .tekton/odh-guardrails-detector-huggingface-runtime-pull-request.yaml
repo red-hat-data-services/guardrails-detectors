@@ -20,7 +20,8 @@ metadata:
   namespace: rhoai-tenant
 spec:
   timeouts:
-    pipeline: "4h0m0s"
+    pipeline: 8h
+    tasks: 4h
   taskRunSpecs:
     - pipelineTaskName: prefetch-dependencies
       computeResources:
