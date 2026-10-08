@@ -19,6 +19,14 @@ metadata:
   name: odh-guardrails-detector-hf-runtime-on-pull-request-71493
   namespace: rhoai-tenant
 spec:
+  taskRunSpecs:
+    - pipelineTaskName: prefetch-dependencies
+      computeResources:
+        requests:
+          cpu: '1'
+          memory: 6Gi
+        limits:
+          memory: 6Gi
   timeouts:
     pipeline: "4h0m0s"
   params:
