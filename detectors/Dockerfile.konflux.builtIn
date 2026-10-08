@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal as base
 RUN microdnf update -y && \
     microdnf install -y --nodocs \
         python-pip python-devel && \
-    pip install --upgrade --no-cache-dir pip wheel && \
+    pip install --upgrade --no-cache-dir 'pip>=26.1.2' wheel && \
     microdnf clean all
 
 # FROM icr.io/fm-stack/ubi9-minimal-py39-torch as builder
