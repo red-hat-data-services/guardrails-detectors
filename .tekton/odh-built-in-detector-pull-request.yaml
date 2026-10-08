@@ -19,6 +19,9 @@ metadata:
   name: odh-built-in-detector-on-pull-request-93857
   namespace: rhoai-tenant
 spec:
+  timeouts:
+    pipeline: 8h
+    tasks: 4h
   params:
   - name: git-url
     value: '{{source_url}}'
