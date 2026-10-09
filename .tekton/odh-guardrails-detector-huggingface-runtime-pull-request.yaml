@@ -20,7 +20,16 @@ metadata:
   namespace: rhoai-tenant
 spec:
   timeouts:
-    pipeline: "4h0m0s"
+    pipeline: 8h
+    tasks: 4h
+  taskRunSpecs:
+    - pipelineTaskName: prefetch-dependencies
+      computeResources:
+        requests:
+          cpu: '1'
+          memory: 6Gi
+        limits:
+          memory: 6Gi
   params:
   - name: git-url
     value: '{{source_url}}'

@@ -1,9 +1,11 @@
-FROM registry.access.redhat.com/ubi9/ubi-minimal as base
-RUN microdnf update -y && \
-    microdnf install -y --nodocs \
+FROM registry.access.redhat.com/ubi9/python-312:latest@sha256:e6a10c3150624fbfd33dbd7721ef99ce7a1001b417d64427ad58515ab8044121 as base
+USER root
+RUN dnf update -y && \
+    dnf install -y --nodocs \
         python-pip python-devel && \
     pip install --upgrade --no-cache-dir 'pip>=26.1.2' wheel && \
-    microdnf clean all
+    dnf clean all
+
 
 # FROM icr.io/fm-stack/ubi9-minimal-py39-torch as builder
 FROM base as builder
@@ -29,6 +31,8 @@ RUN mkdir /app/bin &&\
      echo '#!/bin/bash' > /app/bin/regex-detector &&\
     echo "uvicorn app:app --workers 4 --host 0.0.0.0 --port 8080 --log-config /app/detectors/common/log_conf.yaml" >> /app/bin/regex-detector &&\
     chmod +x /app/bin/regex-detector
+
+USER 1001
 CMD ["/app/bin/regex-detector"]
 
 LABEL name="rhoai/odh-built-in-detector-rhel9" \
