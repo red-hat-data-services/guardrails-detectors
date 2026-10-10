@@ -1,4 +1,4 @@
-FROM quay.io/aipcc/base-images/cpu:3.5.0@sha256:a398ebc954964790a18157c50bf36656f358005786e46273b87f885d78909d5d
+FROM quay.io/aipcc/base-images/cpu:3.5.0@sha256:ad4d51348b0d41f4b0a55ccd3d0353cbdc5563e9d8d653e166d26fca79ad8e72
 USER root
 
 RUN sed -i.bak 's/include-system-site-packages = false/include-system-site-packages = true/' /opt/app-root/pyvenv.cfg
