@@ -23,6 +23,14 @@ spec:
     pipeline: 8h
     tasks: 4h
   taskRunSpecs:
+    - pipelineTaskName: rpms-signature-scan
+      computeResources:
+        requests:
+          cpu: 2600m
+          memory: 512Mi
+        limits:
+          cpu: 2600m
+          memory: 512Mi
     - pipelineTaskName: prefetch-dependencies
       computeResources:
         requests:
