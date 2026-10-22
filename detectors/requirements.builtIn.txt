@@ -41,8 +41,8 @@ elementpath==5.1.4 \
     --hash=sha256:42ff6d71ff048c545a1ce84a3b8cb52ff8d31b59b63238a457a18c7ca1a5024b
     # via xmlschema
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
-fastapi==0.136.3 \
-    --hash=sha256:086c88e291db94a1a18eaf94a92b94a2d87817d19dc600111911946a468fba40
+fastapi==0.141.1 \
+    --hash=sha256:38320a10d687b898e5c904c0ca63f597aecb1106df268ceb7fbe88be2e78f959
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6-EA2/cpu-ubi9-test/simple/
 h11==0.16.0 \
