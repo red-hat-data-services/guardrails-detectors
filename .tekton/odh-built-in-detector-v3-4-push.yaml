@@ -19,17 +19,6 @@ metadata:
   name: odh-built-in-detector-v3-4-on-push
   namespace: rhoai-tenant
 spec:
-  timeouts:
-    pipeline: 8h
-    tasks: 4h
-  taskRunSpecs:
-    - pipelineTaskName: prefetch-dependencies
-      computeResources:
-        requests:
-          cpu: '1'
-          memory: 6Gi
-        limits:
-          memory: 6Gi
   params:
   - name: git-url
     value: '{{source_url}}'
@@ -41,7 +30,7 @@ spec:
   - name: output-image
     value: quay.io/rhoai/odh-built-in-detector-rhel9:{{target_branch}}
   - name: rhoai-version
-    value: "3.4.5"
+    value: "3.4.6"
   - name: dockerfile
     value: Dockerfile.konflux.builtIn
   - name: path-context
