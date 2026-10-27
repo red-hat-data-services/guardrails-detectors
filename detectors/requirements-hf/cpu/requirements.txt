@@ -35,8 +35,9 @@ fastapi==0.136.3 \
     --hash=sha256:691af4cfa72721b15151732f9e7b5ed3998fa4553c1664519a8766c4f509690e
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-filelock==3.29.4 \
-    --hash=sha256:68d8bb49d8f62fa3d2a86a6ffc1ce79e4480b8a9df026f222cd251179fb33959
+filelock==4.2.4 \
+    --hash=sha256:301241438c57936ef93f4243a94f2559022268bfcf9b375a9a72eb0f8db8358e \
+    --hash=sha256:c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d
     # via
     #   huggingface-hub
     #   torch
