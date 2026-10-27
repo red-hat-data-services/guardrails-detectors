@@ -27,7 +27,10 @@ hf-cpu-requirements:
 		$(UV_COMPILE_FLAGS) \
 		--default-index $(RHAI_CPU_INDEX_URL) \
 		-c constraints/constraints-hf.txt \
-		-o requirements-hf/cpu/requirements.txt
+		-o requirements-hf/cpu/requirements-full.txt
+	python3 scripts/extract_native_requirements.py \
+		requirements-hf/cpu/requirements-full.txt \
+		requirements-hf/cpu/requirements.txt
 
 hf-cuda-requirements:
 	uv pip compile pyproject.toml --extra huggingface \
