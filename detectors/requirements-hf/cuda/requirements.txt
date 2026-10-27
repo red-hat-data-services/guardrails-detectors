@@ -103,8 +103,9 @@ numpy==2.5.0 \
     --hash=sha256:f3399ca01cb2cc6c73afb78491ec3b16b3cd5e72f201af0db4a0d71deb87e064
     # via transformers
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
-packaging==26.2 \
-    --hash=sha256:80597549bfd28e531bb0f192dda8baa73f757572cb1ae2cd373a3bdb717ba9bb
+packaging==26.3 \
+    --hash=sha256:94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79 \
+    --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
     # via
     #   huggingface-hub
     #   transformers
