@@ -1,13 +1,13 @@
-FROM registry.access.redhat.com/ubi9/ubi-minimal as base
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:bba2b4bbf0ed15cfe7dd72a1e17ae7d2015a141f306b304e1a2785c41400e39c as base
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:/usr/lib64:/usr/lib
 ARG TARGETARCH
 
-# pip>=26.1.2 fixes CVE-2026-8643 (path traversal via entry point names)
+# pip>=26.2.2 fixes CVE-2026-8643 (path traversal via entry point names)
 RUN microdnf update -y                                            && \
     microdnf install -y --nodocs                                     \
         python3.11 python3.11-pip python3.11-devel                && \
     rpm -e --nodeps python3.11-setuptools                          && \
-    pip3.11 install --upgrade --no-cache-dir 'pip>=26.1.2' setuptools wheel && \
+    pip3.11 install --upgrade --no-cache-dir 'pip>=26.2.2' setuptools wheel && \
     if [ "$TARGETARCH" = "ppc64le" ]; then                           \
         microdnf install -y --nodocs                                 \
             git gcc-toolset-13 rust cargo wget unzip              && \
