@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/python-312:latest@sha256:e6a10c3150624fbfd33dbd7721ef99ce7a1001b417d64427ad58515ab8044121 as base
+FROM registry.access.redhat.com/ubi9/python-312:latest@sha256:105e70cb265e82beef1687b87b77444a05b410c55d8631e9aa9aa6804fcca45d as base
 USER root
 RUN dnf update -y && \
     dnf install -y --nodocs \
