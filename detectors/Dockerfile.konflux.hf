@@ -1,6 +1,6 @@
 ARG TARGETARCH=amd64
-ARG CUDA_BASE_IMAGE
-ARG CPU_BASE_IMAGE
+ARG CUDA_BASE_IMAGE=quay.io/aipcc/base-images/cuda-13.0-el9.6:3.5.5-1793042093@sha256:a806825e41da4df8f25673963c31e070ff9b60aca0c42ed31b4a73624831de20
+ARG CPU_BASE_IMAGE=quay.io/aipcc/base-images/cpu:3.5.5@sha256:56b86506fa8c09b60eb0b678481c8dfbf618d6b193554f47b597b42028198cfc
 FROM --platform=linux/amd64 ${CUDA_BASE_IMAGE} AS base-amd64
 FROM --platform=linux/arm64 ${CUDA_BASE_IMAGE} AS base-arm64
 FROM ${CPU_BASE_IMAGE} AS base-ppc64le
