@@ -69,8 +69,9 @@ httpx==0.28.1 \
     --hash=sha256:40b3fef8650d88ced417b05b236427596a6da9117b0f64ef5b0a5d548d20addb
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cpu-ubi9/simple/
-huggingface-hub==0.36.2 \
-    --hash=sha256:9dbca7484c9269e61e6e4a8202b38c00654c9a68843ccc201049a6abc38cf412
+huggingface-hub==2.3.0 \
+    --hash=sha256:0b783b37f200f1d25bef2344a997c7d410f4437fbe9d8fd965f958e75cec7aef \
+    --hash=sha256:5da369600233568a126eb5578754935b2add9446b42d9e2fc0927d56840ac1a5
     # via
     #   tokenizers
     #   transformers
