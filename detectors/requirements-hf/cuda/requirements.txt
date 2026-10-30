@@ -226,8 +226,8 @@ typing-inspection==0.4.2 \
     #   fastapi
     #   pydantic
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
-urllib3==2.7.0 \
-    --hash=sha256:48966e55822e3eb77891fc25d6f9aa8f70ae950ed232b391035dbda1b11a4f29
+urllib3==2.8.0 \
+    --hash=sha256:86580b49f558744f893aed779c1b53d5c80db47d3353693fb1ffa70c0f36a4f6
     # via
     #   guardrails-detectors (pyproject.toml)
     #   requests
