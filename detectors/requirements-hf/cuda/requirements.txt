@@ -17,9 +17,11 @@ anyio==4.14.2 \
     #   httpx
     #   starlette
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.5/cuda13.0-ubi9/simple/
-certifi==2026.6.17 \
-    --hash=sha256:1e35484ec6ce2ef13cebd6e82cf57c0e23236108d31a1b176e757fb4fba72f64
+certifi==2026.10.19 \
+    --hash=sha256:06803e393863f46355cc36d033dc381336de5d28c58f2366469f329201490e6e \
+    --hash=sha256:c3afc22396e63b41c5e9a9af2252aa70edea9555a12a5301b8516cd449015802
     # via
+    #   guardrails-detectors (pyproject.toml)
     #   httpcore
     #   httpx
     #   requests
