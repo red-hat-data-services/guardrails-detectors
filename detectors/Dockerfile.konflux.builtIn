@@ -1,9 +1,9 @@
-FROM registry.access.redhat.com/ubi9/ubi-minimal as base
-# pip>=26.1.2 fixes CVE-2026-8643 (path traversal via entry point names)
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:bba2b4bbf0ed15cfe7dd72a1e17ae7d2015a141f306b304e1a2785c41400e39c as base
+# pip>=26.2.2 fixes CVE-2026-8643 (path traversal via entry point names)
 RUN microdnf update -y && \
     microdnf install -y --nodocs \
         python3.11 python3.11-pip python3.11-devel && \
-    pip3.11 install --upgrade --no-cache-dir 'pip>=26.1.2' wheel && \
+    pip3.11 install --upgrade --no-cache-dir 'pip>=26.2.2' wheel && \
     microdnf clean all
 
 # FROM icr.io/fm-stack/ubi9-minimal-py39-torch as builder
