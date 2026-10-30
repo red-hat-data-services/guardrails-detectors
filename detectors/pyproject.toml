@@ -18,7 +18,7 @@ dependencies = [
 [project.optional-dependencies]
 huggingface = [
     "certifi>=2026.10.19",
-    "transformers==4.57.3",
+    "transformers==5.21.0",
     "sentencepiece==0.2.1",
     "tiktoken==0.12.0",
     "torch==2.11.0",
