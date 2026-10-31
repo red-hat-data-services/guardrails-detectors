@@ -37,8 +37,9 @@ click==8.5.0 \
     #   huggingface-hub
     #   uvicorn
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6/cuda13.0-ubi9/simple/
-fastapi==0.141.1 \
-    --hash=sha256:474a0bb8c97fcbf119385b1bea386217f7eeee8a000990d270ca0e468f4fdd37
+fastapi==0.161.1 \
+    --hash=sha256:4076b88434452e20289379068e976c4a04c65ffc8e6be31510106e150a422f0f \
+    --hash=sha256:a1363080cf9aeedecd99f4e1a23669d7e77542227f6536f4d7bbd59f07ecaa94
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6/cuda13.0-ubi9/simple/
 filelock==4.2.4 \
