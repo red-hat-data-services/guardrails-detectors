@@ -75,8 +75,9 @@ jsonschema-specifications==2025.9.1 \
     --hash=sha256:b7e8d9e31ac4eb1d0534fc8f53ea4688bee48820dfc9d07b7ad71ef0c274cfae
     # via jsonschema
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6/cpu-ubi9/simple/
-markdown==3.8.2 \
-    --hash=sha256:ce8d287f38be6b50ed6a3db06ee2fb491f9dca3b7a64e54edf7a61f20e5fd387
+Markdown==3.11.2 \
+    --hash=sha256:87bf5d90f2d2882e2c02fcda182c2800456b985bff38913867c49706481514b0 \
+    --hash=sha256:f80390747a2a0ff2ba54da074ce4f862f72a6685f608cd2637b646a6d83993f5
     # via guardrails-detectors (pyproject.toml)
     # from https://packages.redhat.com/api/pypi/public-rhai/rhoai/3.6/cpu-ubi9/simple/
 prometheus-client==0.26.0 \
