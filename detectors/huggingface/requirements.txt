@@ -1,2 +1,3 @@
 certifi>=2026.10.19
 transformers==4.50.0
+filelock==4.2.1
