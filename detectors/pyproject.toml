@@ -20,7 +20,7 @@ huggingface = [
     "certifi>=2026.10.19",
     "transformers==4.57.3",
     "sentencepiece==0.2.1",
-    "tiktoken==0.12.0",
+    "tiktoken==0.14.0",
     "torch==2.11.0",
 ]
 built-in = [
